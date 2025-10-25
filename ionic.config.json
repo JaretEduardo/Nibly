@@ -1,0 +1,7 @@
+{
+  "name": "niblyfront",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
