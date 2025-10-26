@@ -1,18 +1,26 @@
 <ion-header class="ion-no-border" mode="ios">
   <ion-toolbar class="wrapper">
     <ion-item lines="none">
+    <!-- <ion-buttons slot="start">
+        <ion-back-button defaultHref="/" text=""></ion-back-button>
+      </ion-buttons> -->
       <ion-label>
-        <p>AeroControl</p>
-        <small>Gestión Inteligente</small>
+        <p>Nibly</p>
+        <small>Gestión inteligente</small>
       </ion-label>
       
-      <ion-icon slot="end" name="settings-outline" class="settings-icon"></ion-icon>
+      <ion-avatar slot="end">
+        <img alt="Profile photo" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+      </ion-avatar>      
     </ion-item>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="hide-scrollbar ion-padding-horizontal" color="light">
-  <ion-card class="ion-no-margin">
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-card class="ion-no-margin" color="primary">
     <ion-card-header>
       <ion-card-title>Motor de Consumo</ion-card-title>
     </ion-card-header>
@@ -22,10 +30,10 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-button class="scan-button ion-margin-top" size="large" fill="clear">
+<!--  <ion-button class="scan-button ion-margin-top" size="large" fill="clear">
     <ion-icon slot="start" name="qr-code-outline"></ion-icon>
     Escanear Flight ID
-  </ion-button>
+  </ion-button> -->
 
   <ion-list lines="none" class="flights-list">
     <ion-list-header>
@@ -87,25 +95,25 @@
   </ion-list>
 
   <!-- Predicción IA Section -->
-  <ion-card class="prediction-card">
+  <ion-card class="ia-prediction">
     <ion-card-content>
-      <div class="prediction-header">
-        <ion-icon name="analytics-outline"></ion-icon>
-        <ion-label>Predicción IA</ion-label>
+      <div class="header-ia">
+        <ion-icon name="trending-up-outline"></ion-icon> 
+        <h3 class="title-ia">Predicción IA</h3>
       </div>
-
-      <p class="prediction-text">
-        Para el vuelo AM109 con 180 pasajeros, se recomienda:
-      </p>
-
-      <div class="prediction-items">
-        <div class="prediction-item">
-          <span class="item-label">Bebidas recomendadas:</span>
-          <span class="item-value">195 unidades</span>
+      
+      <p class="subtitle-ia">Para el vuelo AM109 con 180 pasajeros, se recomienda:</p>
+      
+      <div class="recommendations">
+        
+        <div class="reco-item">
+          <span class="label">Bebidas recomendadas:</span>
+          <span class="value">195 unidades</span>
         </div>
-        <div class="prediction-item">
-          <span class="item-label">Snacks recomendados:</span>
-          <span class="item-value">210 unidades</span>
+        
+        <div class="reco-item">
+          <span class="label">Snacks recomendados:</span>
+          <span class="value">210 unidades</span>
         </div>
       </div>
     </ion-card-content>

@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { IonAvatar, IonButton, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonContent, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonListHeader, IonToolbar } from '@ionic/angular/standalone';
+import { IonAvatar, IonButton, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonContent, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonListHeader, IonRefresher, IonRefresherContent, IonToolbar, RefresherCustomEvent } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { checkmarkCircleOutline, cubeOutline, timeOutline } from 'ionicons/icons';
 
@@ -9,7 +9,7 @@ import { checkmarkCircleOutline, cubeOutline, timeOutline } from 'ionicons/icons
   selector: 'app-productivity',
   templateUrl: './productivity.component.html',
   styleUrls: ['./productivity.component.scss'],
-  imports: [CommonModule, RouterModule, IonHeader, IonToolbar, IonItem, IonLabel, IonAvatar, IonContent, IonCard, IonCardContent, IonIcon, IonButton, IonList, IonListHeader, IonCardHeader, IonCardTitle],
+  imports: [CommonModule, RouterModule, IonHeader, IonToolbar, IonItem, IonLabel, IonAvatar, IonContent, IonCard, IonCardContent, IonIcon, IonButton, IonList, IonListHeader, IonCardHeader, IonCardTitle, IonRefresher, IonRefresherContent],
   standalone: true,
 })
 export class ProductivityComponent  implements OnInit {
@@ -19,5 +19,11 @@ export class ProductivityComponent  implements OnInit {
   }
 
   ngOnInit() {}
+
+  handleRefresh(event: RefresherCustomEvent) {
+    setTimeout(() => {
+      event.target.complete();
+    }, 2000);
+  }
 
 }

@@ -17,6 +17,9 @@
 </ion-header>
 
 <ion-content class="hide-scrollbar ion-padding-horizontal" color="light">
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
   <ion-card class="firstCard ion-no-margin">
     <ion-card-header>
       <ion-card-title>Productividad</ion-card-title>
@@ -79,7 +82,6 @@
 
   <ion-card class="ia-prediction">
     <ion-card-content>
-      
       <div class="header-ia">
         <ion-icon name="trending-up-outline"></ion-icon> 
         <h3 class="title-ia">Predicción IA</h3>
@@ -98,10 +100,8 @@
           <span class="label">Snacks recomendados:</span>
           <span class="value">210 unidades</span>
         </div>
-
       </div>
     </ion-card-content>
-</ion-card>
-  
+  </ion-card>
 
 </ion-content>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IonAvatar, IonHeader, IonIcon, IonItem, IonLabel, IonToolbar, IonContent, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonButton, IonList, IonListHeader } from '@ionic/angular/standalone';
+import { IonAvatar, IonHeader, IonIcon, IonItem, IonLabel, IonToolbar, IonContent, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonButton, IonList, IonListHeader, IonRefresher, IonRefresherContent, RefresherCustomEvent } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { airplaneOutline, analyticsOutline, peopleOutline, qrCodeOutline } from 'ionicons/icons';
 
@@ -8,7 +8,7 @@ import { airplaneOutline, analyticsOutline, peopleOutline, qrCodeOutline } from 
   templateUrl: './consumption.component.html',
   styleUrls: ['./consumption.component.scss'],
   imports: [
-    IonHeader, IonToolbar, IonItem, IonLabel, IonIcon, IonAvatar, IonContent, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonButton, IonList, IonItem, IonLabel, IonListHeader
+    IonHeader, IonToolbar, IonItem, IonLabel, IonIcon, IonAvatar, IonContent, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonButton, IonList, IonItem, IonLabel, IonListHeader, IonRefresher, IonRefresherContent
   ],
   standalone: true
 })
@@ -19,5 +19,11 @@ export class ConsumptionComponent  implements OnInit {
   }
 
   ngOnInit() {}
+
+  handleRefresh(event: RefresherCustomEvent) {
+    setTimeout(() => {
+      event.target.complete();
+    }, 2000);
+  }
 
 }
