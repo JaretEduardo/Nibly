@@ -16,7 +16,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="hide-scrollbar ion-padding-horizontal" color="light">
+<ion-content class="hide-scrollbar ion-padding-horizontal" [scrollEvents]="true" color="light">
   <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
@@ -35,7 +35,7 @@
     Escanear Flight ID
   </ion-button> -->
 
-  <ion-list lines="none" class="flights-list">
+  <ion-list lines="none" class="flights-list scrollable-lists">
     <ion-list-header>
       <ion-icon name="airplane-outline"></ion-icon> 
       <ion-label>Vuelos Activos</ion-label>
@@ -44,54 +44,31 @@
     <!-- Flight cards matching image (structure/content only) -->
 
     <!-- Flight card: AM109 -->
-    <ion-card class="flight-card">
-      <ion-card-content>
-        <div class="flight-header">
-          <h2>AM109</h2>
-          <span class="badge badge-internacional">Internacional</span>
-        </div>
-
-        <div class="flight-info">
-          <div class="info-item">
-            <ion-icon name="airplane-outline"></ion-icon>
-            <span>MEX</span>
+    @for (consumo of data; track consumo.id) {
+      <ion-card class="flight-card">
+        <ion-card-content>
+          <div class="flight-header">
+            <h2>{{ consumo.flight_id }}</h2>
+            <span class="badge badge-internacional">{{ consumo.date | date: 'dd-MMMM-yyyy' | titlecase }}</span>
           </div>
-          <div class="info-item">
-            <ion-icon name="people-outline"></ion-icon>
-            <span>180 pax</span>
+
+          <div class="flight-info">
+            <div class="info-item">
+              <ion-icon name="airplane-outline"></ion-icon>
+              <span>{{ consumo.origin }}</span>
+            </div>
+            <div class="info-item">
+              <!-- <ion-icon name="people-outline"></ion-icon> -->
+              <span>Tipo de vuelo: {{ consumo.flight_type }}</span>
+            </div>
           </div>
-        </div>
 
-        <ion-button expand="block" class="register-button">
-          Registrar Consumo
-        </ion-button>
-      </ion-card-content>
-    </ion-card>
-
-    <!-- Flight card: AM205 -->
-    <ion-card class="flight-card">
-      <ion-card-content>
-        <div class="flight-header">
-          <h2>AM205</h2>
-          <span class="badge badge-nacional">Nacional</span>
-        </div>
-
-        <div class="flight-info">
-          <div class="info-item">
-            <ion-icon name="airplane-outline"></ion-icon>
-            <span>GDL</span>
-          </div>
-          <div class="info-item">
-            <ion-icon name="people-outline"></ion-icon>
-            <span>120 pax</span>
-          </div>
-        </div>
-
-        <ion-button expand="block" class="register-button">
-          Registrar Consumo
-        </ion-button>
-      </ion-card-content>
-    </ion-card>
+        <!--  <ion-button expand="block" class="register-button">
+            Registrar Consumo
+          </ion-button> -->
+        </ion-card-content>
+      </ion-card>
+    }
   </ion-list>
 
   <!-- Predicción IA Section -->
