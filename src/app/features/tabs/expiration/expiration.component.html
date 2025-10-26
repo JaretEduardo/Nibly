@@ -1,0 +1,64 @@
+<ion-header class="ion-no-border" mode="ios">
+  <ion-toolbar class="wrapper">
+    <ion-item lines="none">
+    <!-- <ion-buttons slot="start">
+        <ion-back-button defaultHref="/" text=""></ion-back-button>
+      </ion-buttons> -->
+      <ion-label>
+        <p>Nibly</p>
+        <small>Gestión inteligente</small>
+      </ion-label>
+      
+      <ion-avatar slot="end">
+        <img alt="Profile photo" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+      </ion-avatar>      
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="hide-scrollbar ion-padding-horizontal" color="light">
+  <ion-card class="ion-no-margin">
+    <ion-card-header>
+      <ion-card-title>Panel de frescura</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      Gestión predictiva de caducidades.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button class="ion-margin-top" size="large" >
+    <ion-icon slot="start" name="camera-outline"></ion-icon>
+    Escanear productos
+  </ion-button>
+
+  <ion-list lines="none">
+    <ion-list-header>
+      <ion-icon name="alert-circle-outline"></ion-icon> 
+      <ion-label>Alertas de caducidad</ion-label>
+    </ion-list-header>
+
+    <ion-item lines="none" class="ion-margin-horizontal ion-padding-bottom" color="light">
+      <div slot="start" class="tags-container">
+          <span class="tag tag-lote">LOT-E19</span>
+          <span class="tag tag-urgente">Urgente</span>
+      </div>
+      <ion-label class="main-label"> 
+        <div class="header-line">
+            <h2>Bebida Cola</h2> 
+            
+            <div class="notification-dot"></div> 
+        </div>
+        
+        <p class="fecha-info">
+            <ion-icon name="calendar-outline"></ion-icon>
+            25-10-2025 • 3 días
+        </p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <div>
+    <ion-label>Filtros</ion-label>
+  </div>
+</ion-content>
