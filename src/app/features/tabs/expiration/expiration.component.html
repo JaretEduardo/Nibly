@@ -71,14 +71,14 @@
         
         <ion-card class="stat-card stat-healthy ion-no-margin">
           <ion-card-content class="ion-text-start health">
-            <p class="stat-number stat-number-dark">{{count.normal}}</p>
+            <p class="stat-number stat-number-dark">{{count?.normal}}</p>
             <small>Stock saludable</small>
           </ion-card-content>
         </ion-card>
         
         <ion-card class="stat-card stat-alert ion-no-margin">
           <ion-card-content class="ion-text-start expired">
-            <p class="stat-number stat-number-dark">{{count.danger}}</p>
+            <p class="stat-number stat-number-dark">{{count?.danger}}</p>
             <small>Caducan en 7 días</small>
           </ion-card-content>
         </ion-card>
