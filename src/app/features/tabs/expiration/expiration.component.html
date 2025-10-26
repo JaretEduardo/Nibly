@@ -17,7 +17,7 @@
 </ion-header>
 
 <ion-content class="hide-scrollbar ion-padding-horizontal" color="light">
-  <ion-card class="ion-no-margin">
+  <ion-card class="firstCard ion-no-margin">
     <ion-card-header>
       <ion-card-title>Panel de frescura</ion-card-title>
     </ion-card-header>
@@ -52,13 +52,30 @@
         
         <p class="fecha-info">
             <ion-icon name="calendar-outline"></ion-icon>
-            25-10-2025 • 3 días
+            25- Octubre -2025 • 3 días
         </p>
       </ion-label>
     </ion-item>
   </ion-list>
 
-  <div>
-    <ion-label>Filtros</ion-label>
+  <div class="filterContainer">
+      <ion-label class="filter-title">Filtros</ion-label> 
+      <div class="card-row"> 
+        
+        <ion-card class="stat-card stat-healthy ion-no-margin">
+          <ion-card-content class="ion-text-start health">
+            <p class="stat-number stat-number-dark">15</p>
+            <small>Stock saludable</small>
+          </ion-card-content>
+        </ion-card>
+        
+        <ion-card class="stat-card stat-alert ion-no-margin">
+          <ion-card-content class="ion-text-start expired">
+            <p class="stat-number stat-number-dark">2</p>
+            <small>Caducan en 7 días</small>
+          </ion-card-content>
+        </ion-card>
+
+      </div>
   </div>
 </ion-content>

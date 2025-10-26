@@ -25,7 +25,7 @@ ion-header {
           color: var(--text-primary);
         }
         small {
-            font-size: 1rem;
+          font-size: 1rem;
         }
       }
       ion-avatar {
@@ -50,7 +50,7 @@ ion-header {
 }
 
 ion-content {
-  ion-card {
+  .firstCard {
     box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.15);
     margin-top: 1.25rem;
     padding: 0.75rem;
@@ -172,6 +172,63 @@ ion-list {
           margin-right: 2px;
           vertical-align: middle;
         }
+      }
+    }
+  }
+}
+
+.filterContainer {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  .filter-title {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+
+  .card-row {
+    display: flex;
+    gap: 10px;
+  }
+
+  .stat-card {
+    margin-top: 1rem;
+    flex-grow: 1;
+    flex-basis: 0;
+    border-radius: 8px;
+    cursor: pointer;
+
+    .health {
+      background-color: #e7fce7;
+      padding: 1rem !important;
+
+      p.stat-number-dark {
+        color: #008000;
+        font-weight: 700;
+        font-size: 1.75rem;
+      }
+
+      small {
+        color: #008000;
+        font-weight: 600;
+        font-size: 0.8rem;
+      }
+    }
+
+    .expired {
+      background-color: #fce7e7;
+      padding: 1rem !important;
+
+      p.stat-number-dark {
+        color: var(--ion-color-danger);
+        font-weight: 700;
+        font-size: 1.75rem;
+      }
+
+      small {
+        color: var(--ion-color-danger);
+        font-weight: 600;
+        font-size: 0.8rem;
       }
     }
   }
