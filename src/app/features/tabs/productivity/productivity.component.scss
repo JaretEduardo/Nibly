@@ -291,3 +291,10 @@ ion-list {
   font-weight: 700;
   color: var(--ion-color-primary);
 }
+
+.recommendations hr {
+  border: none;
+  height: 1px;      
+  background-color: #d3d3d3;
+  margin: 10px 0; 
+}

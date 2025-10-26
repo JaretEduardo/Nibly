@@ -55,21 +55,22 @@
       <ion-label>Tareas de ensamblaje</ion-label>
     </ion-list-header>
 
-    <ion-item lines="none" class="info-card-item ion-margin-horizontal ion-padding-bottom" color="light"> 
+    @for (dato of data; track dato.id) {
+      <ion-item lines="none" class="info-card-item ion-margin-horizontal ion-padding-bottom" color="light"> 
         <ion-label>
             <div class="header-line">
-                <h2 class="main-title">DRW_001</h2>
+                <h2 class="main-title">{{ dato.Drawer_ID }}</h2>
                 <div class="status-badge completado">Completado</div>
             </div>
 
             <div class="stats-row">
                 <div class="stat-col">
                     <small>Items</small>
-                    <p>12</p>
+                    <p>{{ dato.Total_Items }}</p>
                 </div>
                 <div class="stat-col">
                     <small>Únicos</small>
-                    <p>4</p>
+                    <p>{{ dato.Unique_Item_Types }}</p>
                 </div>
                 <div class="stat-col">
                     <small>Tiempo</small>
@@ -78,27 +79,32 @@
             </div>
         </ion-label> 
     </ion-item>
+    }
   </ion-list>
 
   <ion-card class="ia-prediction">
     <ion-card-content>
       <div class="header-ia">
         <ion-icon name="trending-up-outline"></ion-icon> 
-        <h3 class="title-ia">Predicción IA</h3>
+        <h3 class="title-ia">Análisis de rendimiento</h3>
       </div>
-      
-      <p class="subtitle-ia">Para el vuelo AM109 con 180 pasajeros, se recomienda:</p>
-      
+            
       <div class="recommendations">
         
         <div class="reco-item">
-          <span class="label">Bebidas recomendadas:</span>
-          <span class="value">195 unidades</span>
+          <span class="label">Tiempo estimado (IA):</span>
+          <span class="value">10.2 min</span>
         </div>
         
         <div class="reco-item">
-          <span class="label">Snacks recomendados:</span>
-          <span class="value">210 unidades</span>
+          <span class="label">Tiempo Real:</span>
+          <span class="value">9.8 Min</span>
+        </div>
+
+        <hr>
+        <div class="reco-item">
+          <span class="label">Eficiencia:</span>
+          <span class="value">104%</span>
         </div>
       </div>
     </ion-card-content>
