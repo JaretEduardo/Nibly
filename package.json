@@ -27,6 +27,7 @@
     "@capacitor/haptics": "7.0.2",
     "@capacitor/keyboard": "7.0.3",
     "@capacitor/status-bar": "7.0.3",
+    "@google/genai": "^1.27.0",
     "@ionic/angular": "^8.0.0",
     "ionicons": "^7.0.0",
     "rxjs": "~7.8.0",
