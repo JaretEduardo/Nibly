@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { IonAvatar, IonButton, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonContent, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonListHeader, IonToolbar } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { checkmarkCircleOutline, timeOutline } from 'ionicons/icons';
+import { checkmarkCircleOutline, cubeOutline, timeOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-productivity',
@@ -15,7 +15,7 @@ import { checkmarkCircleOutline, timeOutline } from 'ionicons/icons';
 export class ProductivityComponent  implements OnInit {
 
   constructor() { 
-    addIcons({ checkmarkCircleOutline, timeOutline });
+    addIcons({ checkmarkCircleOutline, timeOutline, cubeOutline });
   }
 
   ngOnInit() {}

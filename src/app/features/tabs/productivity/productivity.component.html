@@ -48,29 +48,60 @@
 
   <ion-list lines="none">
     <ion-list-header>
-      <ion-icon name="alert-circle-outline"></ion-icon> 
-      <ion-label>Alertas de caducidad</ion-label>
+      <ion-icon name="cube-outline" class="cube"></ion-icon> 
+      <ion-label>Tareas de ensamblaje</ion-label>
     </ion-list-header>
 
-    <ion-item lines="none" class="ion-margin-horizontal ion-padding-bottom" color="light">
-      <div slot="start" class="tags-container">
-          <span class="tag tag-lote">LOT-E19</span>
-          <span class="tag tag-urgente">Urgente</span>
-      </div>
-      <ion-label class="main-label"> 
-        <div class="header-line">
-            <h2>Bebida Cola</h2> 
-            
-            <div class="notification-dot"></div> 
-        </div>
-        
-        <p class="fecha-info">
-            <ion-icon name="calendar-outline"></ion-icon>
-            25- Octubre -2025 • 3 días
-        </p>
-      </ion-label>
+    <ion-item lines="none" class="info-card-item ion-margin-horizontal ion-padding-bottom" color="light"> 
+        <ion-label>
+            <div class="header-line">
+                <h2 class="main-title">DRW_001</h2>
+                <div class="status-badge completado">Completado</div>
+            </div>
+
+            <div class="stats-row">
+                <div class="stat-col">
+                    <small>Items</small>
+                    <p>12</p>
+                </div>
+                <div class="stat-col">
+                    <small>Únicos</small>
+                    <p>4</p>
+                </div>
+                <div class="stat-col">
+                    <small>Tiempo</small>
+                    <p>8 min</p>
+                </div>
+            </div>
+        </ion-label> 
     </ion-item>
   </ion-list>
 
+  <ion-card class="ia-prediction">
+    <ion-card-content>
+      
+      <div class="header-ia">
+        <ion-icon name="trending-up-outline"></ion-icon> 
+        <h3 class="title-ia">Predicción IA</h3>
+      </div>
+      
+      <p class="subtitle-ia">Para el vuelo AM109 con 180 pasajeros, se recomienda:</p>
+      
+      <div class="recommendations">
+        
+        <div class="reco-item">
+          <span class="label">Bebidas recomendadas:</span>
+          <span class="value">195 unidades</span>
+        </div>
+        
+        <div class="reco-item">
+          <span class="label">Snacks recomendados:</span>
+          <span class="value">210 unidades</span>
+        </div>
+
+      </div>
+    </ion-card-content>
+</ion-card>
+  
 
 </ion-content>

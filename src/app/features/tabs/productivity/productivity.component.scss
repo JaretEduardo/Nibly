@@ -103,7 +103,7 @@ ion-list {
       margin-right: 0.35rem;
       font-size: 1.55rem;
       vertical-align: middle;
-      color: var(--secondary-warning-color);
+      color: var(--success-color);
       --ionicon-stroke-width: 2.75rem;
     }
   }
@@ -113,66 +113,65 @@ ion-list {
     --padding-top: 16px;
     --padding-bottom: 16px;
 
-    .tags-container {
-      display: flex;
-      gap: 6px;
-      align-self: flex-start;
-      position: absolute;
+    .info-card-item {
+      --inner-padding-end: 0;
     }
 
-    .tag {
-      display: inline-block;
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-size: 0.75rem;
+    .header-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .main-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin: 0;
+      color: #333;
+    }
+
+    .status-badge {
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+
+    .completado {
+      background-color: #e7fce7;
+      color: var(--success-color);
+    }
+
+    .stats-row {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .stat-col {
+      flex-grow: 1;
+      flex-basis: 0;
+    }
+
+    .stat-col small {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--secondary-text);
+      margin-bottom: 2px;
       font-weight: 500;
     }
 
-    .tag-lote {
-      color: #555;
-      background: #e0e0e0;
+    .stat-col p {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 0;
+      color: #333;
     }
 
-    .tag-urgente {
-      color: #b33951;
-      background: #fce8e8;
-    }
-
-    ion-label {
-      .header-line {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 27px;
-        margin-bottom: 0.5rem;
-      }
-
-      h2 {
-        font-size: 1.15rem;
-        font-weight: 700;
-        margin: 0;
-      }
-
-      .notification-dot {
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background-color: var(--ion-color-danger);
-        flex-shrink: 0;
-      }
-
-      p {
-        margin-top: 0.65rem;
-        display: flex;
-        align-items: center;
-        gap: 4px;
-
-        ion-icon {
-          font-size: 1rem;
-          margin-right: 2px;
-          vertical-align: middle;
-        }
-      }
+    .stat-col:last-child p {
+      font-weight: 800;
     }
   }
 }
@@ -233,4 +232,62 @@ ion-list {
       }
     }
   }
+}
+
+.ia-prediction {
+  margin: 1rem 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(108, 52, 131, 0.2);
+  background-color: #fff;
+
+  ion-card-content {
+    padding: 1.5rem;
+  }
+}
+
+.header-ia {
+  display: flex;
+  align-items: center;
+  color: var(--ion-color-primary);
+  margin-bottom: 5px;
+}
+
+.header-ia ion-icon {
+  font-size: 1.5rem;
+  margin-right: 8px;
+  --ionicon-stroke-width: 32px;
+}
+
+.title-ia {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.subtitle-ia {
+  color: black;
+  font-size: 0.95rem;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.recommendations {
+  padding-top: 5px;
+}
+
+.reco-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.reco-item .label {
+  font-size: 1rem;
+  color: #333;
+}
+
+.reco-item .value {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ion-color-primary);
 }
