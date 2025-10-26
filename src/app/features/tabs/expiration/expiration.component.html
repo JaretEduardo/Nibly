@@ -38,25 +38,32 @@
       <ion-label>Alertas de caducidad</ion-label>
     </ion-list-header>
 
-    <ion-item lines="none" class="ion-margin-horizontal ion-padding-bottom" color="light">
-      <div slot="start" class="tags-container">
-          <span class="tag tag-lote">LOT-E19</span>
-          <span class="tag tag-urgente">Urgente</span>
-      </div>
-      <ion-label class="main-label"> 
-        <div class="header-line">
-            <h2>Bebida Cola</h2> 
-            
-            <div class="notification-dot"></div> 
+
+    <ion-item *ngFor="let product of products" lines="none" class="ion-margin-horizontal ion-padding-bottom" color="light">
+        <div slot="start" class="tags-container">
+            <span class="tag tag-lote">{{product.Product_ID}}</span>
+            <span class="tag tag-urgente">Product_ID</span>
         </div>
+        <ion-label class="main-label"> 
+          <div class="header-line">
+              <h2>{{product.Product_Name}}</h2> 
+              @if (product.Expiry_Date > fechaActual) {
+                <div class="notification-dot" style="background-color: green;"></div>
+              }
+              @else {
+                <div class="notification-dot" style="background-color: red;"></div>
+              }
+          </div>
+          
+          <p class="fecha-info">
+              <ion-icon name="calendar-outline"></ion-icon>
+              {{product.Expiry_Date}}             </p>
+        </ion-label>
         
-        <p class="fecha-info">
-            <ion-icon name="calendar-outline"></ion-icon>
-            25- Octubre -2025 • 3 días
-        </p>
-      </ion-label>
-    </ion-item>
-  </ion-list>
+      </ion-item>
+
+
+    </ion-list>
 
   <div class="filterContainer">
       <ion-label class="filter-title">Filtros</ion-label> 
@@ -64,14 +71,14 @@
         
         <ion-card class="stat-card stat-healthy ion-no-margin">
           <ion-card-content class="ion-text-start health">
-            <p class="stat-number stat-number-dark">15</p>
+            <p class="stat-number stat-number-dark">{{count.normal}}</p>
             <small>Stock saludable</small>
           </ion-card-content>
         </ion-card>
         
         <ion-card class="stat-card stat-alert ion-no-margin">
           <ion-card-content class="ion-text-start expired">
-            <p class="stat-number stat-number-dark">2</p>
+            <p class="stat-number stat-number-dark">{{count.danger}}</p>
             <small>Caducan en 7 días</small>
           </ion-card-content>
         </ion-card>
